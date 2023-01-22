@@ -48,9 +48,13 @@ def TypedStructure(cls):
 			if self.invalid:
 				result += ':!'
 			else:
-				result += ':type='+ str(self.type)
+				strData = self.__strData__()
+				if strData:
+					result += ':'+ strData
 			result += '>'
 			return result
+		def __strData__(self):
+			return ''
 
 		@classmethod
 		def type(cls, type):

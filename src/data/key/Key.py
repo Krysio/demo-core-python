@@ -16,7 +16,7 @@ class Key:
 	def verifySignature(self, signature, message) -> bool: pass
 
 @Key.type(TYPE_KEY_Secp256k1)
-class KeySecp256k1(Key):
+class KeySecp256k1:
 	def readBuffer(self, buffer: buffer):
 		self.key = buffer.readBlob(33)
 		return self
@@ -31,5 +31,5 @@ class KeySecp256k1(Key):
 		message = sha256(content)
 		return secp256k1.verify(signature, message, self.key)
 
-	def __str__(self):
-		return '<'+ self.__className__ +':'+ self.key.toHex() +'>'
+	def __strData__(self):
+		return self.key.toHex()

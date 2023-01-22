@@ -40,7 +40,7 @@ class TestStructure(unittest.TestCase):
 	
 	def test_toString(self):
 		self.assertEqual(str(Base.fromHex('0102')), '<Base:!>')
-		self.assertEqual(str(Base.fromHex('0202')), '<Sub:type=2>')
+		self.assertEqual(str(Base.fromHex('0202')), '<Sub>')
 
 if __name__ == '__main__':
 	unittest.main()

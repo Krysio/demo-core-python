@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from src.data.Block import Block
-from src.data.User import TYPE_USER_GROUP_ADMIN, TYPE_USER_GROUP_USER
+from src.data.user.User import TYPE_USER_GROUP_ADMIN, TYPE_USER_GROUP_USER
 from src.lib.buffer import buffer
 
 class Txn:
