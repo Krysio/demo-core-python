@@ -1,5 +1,5 @@
 import unittest
-from src.data.Key import Key
+from src.data.key.Key import Key
 from src.lib.buffer import buffer
 
 """ ****************************** """
