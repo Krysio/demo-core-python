@@ -87,7 +87,15 @@ class Block:
 	#region Magic
 
 	def __iter__(self):
-		return self.listOfTransactions
+		self.__iter_cursor = 0
+		return self
+
+	def __next__(self):
+		if self.__iter_cursor < self.countOfTransactions:
+			self.__iter_cursor += 1
+			return self.listOfTransactions[self.__iter_cursor - 1]
+		else:
+			raise StopIteration
 
 	def __str__(self) -> str:
 		if self.invalid:
