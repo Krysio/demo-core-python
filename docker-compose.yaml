@@ -1,0 +1,12 @@
+version: "3"
+services:
+  develop:
+    container_name: py-lib-buffer-develop
+    image: py-lib/buffer
+    build:
+      context: ./app
+      dockerfile: ../Dockerfile
+      target: base
+    volumes:
+      - ./app/:/app/
+    command: /bin/bash # ptw -p
